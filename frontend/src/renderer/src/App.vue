@@ -1,17 +1,30 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import TitleBar from './components/TitleBar.vue'
 import LumiSidebar from './components/LumiSidebar.vue'
 
 const route = useRoute()
 
-const isBrowserMode = computed(() => route.path.startsWith('/browser'))
 const isWelcomePage = computed(() => route.path === '/welcome')
+
+const isDarkMode = ref(false)
+
+const updateTheme = () => {
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  isDarkMode.value = mediaQuery.matches
+  document.documentElement.setAttribute('data-theme', mediaQuery.matches ? 'dark' : 'light')
+}
+
+onMounted(() => {
+  updateTheme()
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  mediaQuery.addEventListener('change', updateTheme)
+})
 </script>
 
 <template>
-  <div class="lumi-app" :class="{ 'dark-mode': isBrowserMode, 'welcome-mode': isWelcomePage }">
+  <div class="lumi-app" :class="{ 'welcome-mode': isWelcomePage }">
     <TitleBar v-if="!isWelcomePage" title="LuomiNest" />
     <div class="lumi-body" v-if="!isWelcomePage">
       <LumiSidebar />
@@ -38,12 +51,8 @@ const isWelcomePage = computed(() => route.path === '/welcome')
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  background: var(--workspace-bg);
+  background: var(--bg);
   position: relative;
-}
-
-.lumi-app.dark-mode {
-  background: var(--browser-bg);
 }
 
 .lumi-app.welcome-mode .resize-handle {

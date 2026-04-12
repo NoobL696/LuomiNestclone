@@ -89,7 +89,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 </script>
 
 <template>
-  <div class="lumi-sidebar" :class="{ 'is-browser': isBrowserMode }">
+  <div class="lumi-sidebar">
     <div class="sidebar-icon-rail">
       <div class="rail-top">
         <button class="avatar-btn" aria-label="辰汐账户">
@@ -176,14 +176,9 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 .lumi-sidebar {
   display: flex;
   height: 100%;
-  background: var(--workspace-sidebar);
-  border-right: 1px solid var(--workspace-border);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
   transition: all var(--transition-normal);
-}
-
-.lumi-sidebar.is-browser {
-  border-right-color: var(--browser-border);
-  background: var(--browser-surface);
 }
 
 .sidebar-icon-rail {
@@ -193,12 +188,8 @@ const selectAgent = (agent: typeof agents.value[0]) => {
   width: 60px;
   height: 100%;
   padding: 12px 0;
-  border-right: 1px solid var(--workspace-border);
+  border-right: 1px solid var(--border);
   flex-shrink: 0;
-}
-
-.is-browser .sidebar-icon-rail {
-  border-right-color: var(--browser-border);
 }
 
 .rail-top {
@@ -267,13 +258,8 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 }
 
 .icon-btn:hover {
-  background: var(--workspace-hover);
+  background: var(--surface-hover);
   color: var(--text-secondary);
-}
-
-.is-browser .icon-btn:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
 }
 
 .icon-btn.active {
@@ -298,7 +284,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: var(--workspace-sidebar);
+  background: var(--surface);
   overflow: hidden;
 }
 
@@ -311,7 +297,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: var(--workspace-panel);
+  background: var(--bg-secondary);
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   transition: all var(--transition-fast);
@@ -345,7 +331,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
   margin: 8px 14px;
   padding: 10px 14px;
   border-radius: var(--radius-md);
-  border: 1px dashed var(--workspace-border);
+  border: 1px dashed var(--border);
   color: var(--text-secondary);
   font-size: 13px;
   font-weight: 500;
@@ -383,7 +369,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 }
 
 .agent-item:hover {
-  background: var(--workspace-hover);
+  background: var(--surface-hover);
 }
 
 .agent-item.active {
@@ -443,7 +429,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 }
 
 .expand-btn:hover {
-  background: var(--workspace-panel);
+  background: var(--bg-secondary);
   color: var(--text-secondary);
 }
 
@@ -453,7 +439,7 @@ const selectAgent = (agent: typeof agents.value[0]) => {
 
 .panel-footer {
   padding: 12px 14px;
-  border-top: 1px solid var(--workspace-border);
+  border-top: 1px solid var(--border);
 }
 
 .update-notice {

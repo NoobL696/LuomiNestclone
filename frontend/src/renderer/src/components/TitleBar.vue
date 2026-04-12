@@ -62,18 +62,13 @@ onUnmounted(() => window.removeEventListener('resize', checkMaximized))
   align-items: center;
   justify-content: space-between;
   height: 34px;
-  background: var(--workspace-sidebar);
-  border-bottom: 1px solid var(--workspace-border);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
   -webkit-app-region: drag;
   user-select: none;
   flex-shrink: 0;
   position: relative;
   z-index: 100;
-}
-
-.dark .lumi-title-bar {
-  background: var(--browser-surface);
-  border-bottom-color: var(--browser-border);
 }
 
 .title-drag-region {
@@ -97,7 +92,7 @@ onUnmounted(() => window.removeEventListener('resize', checkMaximized))
 }
 
 .brand-mark:hover {
-  background: var(--workspace-hover);
+  background: var(--surface-hover);
 }
 
 .brand-text {
@@ -129,7 +124,7 @@ onUnmounted(() => window.removeEventListener('resize', checkMaximized))
 }
 
 .ctrl-btn:hover {
-  background: var(--workspace-hover);
+  background: var(--surface-hover);
   color: var(--text-secondary);
 }
 

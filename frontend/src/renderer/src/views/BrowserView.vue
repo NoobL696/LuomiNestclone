@@ -471,7 +471,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="browser-view dark">
+  <div class="browser-view">
     <div class="browser-tab-bar">
       <div class="tab-list">
         <div
@@ -687,8 +687,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: var(--browser-bg);
-  color: var(--browser-text);
+  background: var(--bg);
+  color: var(--text);
 }
 
 .browser-tab-bar {
@@ -696,8 +696,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: space-between;
   height: 38px;
-  background: var(--browser-surface);
-  border-bottom: 1px solid var(--browser-border);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
   flex-shrink: 0;
   padding-left: 8px;
 }
@@ -724,7 +724,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   padding: 0 10px 0 14px;
   border-radius: 6px 6px 0 0;
   font-size: 12px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
@@ -732,13 +732,13 @@ function handleSearchKeydown(e: KeyboardEvent) {
 }
 
 .tab-item:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .tab-item.active {
-  background: var(--browser-bg);
-  color: var(--browser-text);
+  background: var(--bg);
+  color: var(--text);
 }
 
 .tab-icon {
@@ -757,7 +757,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 .tab-title {
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .tab-close {
@@ -780,7 +780,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 .tab-loading-spinner {
   width: 14px;
   height: 14px;
-  border: 2px solid var(--browser-border);
+  border: 2px solid var(--border);
   border-top-color: var(--lumi-primary);
   border-radius: 50%;
   animation: tab-spin 0.8s linear infinite;
@@ -801,7 +801,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 
 .tab-close:hover {
   opacity: 1 !important;
-  background: rgba(255,255,255,0.1);
+  background: var(--surface-hover);
 }
 
 .tab-add {
@@ -811,15 +811,15 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   transition: all var(--transition-fast);
   flex-shrink: 0;
   margin-right: 8px;
 }
 
 .tab-add:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .browser-nav-bar {
@@ -827,7 +827,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: var(--browser-surface);
+  background: var(--surface);
   flex-shrink: 0;
 }
 
@@ -843,13 +843,13 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   transition: all var(--transition-fast);
 }
 
 .nav-btn:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .nav-btn.dev-toggle.active {
@@ -864,8 +864,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
   gap: 8px;
   height: 36px;
   padding: 0 14px;
-  background: var(--browser-input);
-  border: 1px solid var(--browser-input-border);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   transition: all var(--transition-fast);
 }
@@ -876,7 +876,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 }
 
 .addr-icon {
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   flex-shrink: 0;
 }
 
@@ -884,11 +884,11 @@ function handleSearchKeydown(e: KeyboardEvent) {
   flex: 1;
   background: transparent;
   font-size: 13px;
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .addr-input::placeholder {
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
 }
 
 .nav-right {
@@ -901,8 +901,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 2px;
   padding: 6px 12px;
-  background: var(--browser-surface);
-  border-bottom: 1px solid var(--browser-border);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
   overflow-x: auto;
   flex-shrink: 0;
   scrollbar-width: none;
@@ -919,14 +919,14 @@ function handleSearchKeydown(e: KeyboardEvent) {
   padding: 5px 10px;
   border-radius: var(--radius-sm);
   font-size: 12px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
 .bookmark-item:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .bm-icon-svg {
@@ -937,7 +937,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 .bm-name {
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .bookmark-more {
@@ -946,15 +946,15 @@ function handleSearchKeydown(e: KeyboardEvent) {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   border-radius: 4px;
   flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
 .bookmark-more:hover {
-  background: var(--browser-elevated);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .browser-content {
@@ -1020,7 +1020,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
 
 .brand-lumi {
   font-weight: 700;
-  background: linear-gradient(135deg, #d6d3d1 0%, #a8a29e 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1028,14 +1028,14 @@ function handleSearchKeydown(e: KeyboardEvent) {
 
 .brand-sub {
   font-weight: 300;
-  color: var(--browser-text-dim);
-  -webkit-text-fill-color: var(--browser-text-dim);
+  color: var(--text-muted);
+  -webkit-text-fill-color: var(--text-muted);
 }
 
 .brand-tagline {
   font-size: 15px;
   font-weight: 400;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   letter-spacing: 3px;
   text-transform: lowercase;
 }
@@ -1045,8 +1045,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
 }
 
 .ai-input-box {
-  background: var(--browser-elevated);
-  border: 1px solid var(--browser-border);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
   border-radius: var(--radius-xl);
   overflow: hidden;
   transition: all var(--transition-normal);
@@ -1054,13 +1054,13 @@ function handleSearchKeydown(e: KeyboardEvent) {
 
 .ai-input-box:focus-within {
   border-color: rgba(13, 148, 136, 0.4);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08), 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.08), var(--shadow-lg);
 }
 
 .search-engine-bar {
   position: relative;
   padding: 12px 16px;
-  border-bottom: 1px solid var(--browser-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .engine-selector {
@@ -1068,26 +1068,26 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--browser-border);
+  background: var(--surface-hover);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
 }
 
 .engine-selector:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: var(--surface-elevated);
+  border-color: var(--text-muted);
 }
 
 .engine-name {
   font-size: 13px;
   font-weight: 500;
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .engine-arrow {
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   transition: transform var(--transition-fast);
 }
 
@@ -1100,10 +1100,10 @@ function handleSearchKeydown(e: KeyboardEvent) {
   top: calc(100% - 4px);
   left: 16px;
   min-width: 160px;
-  background: var(--browser-elevated);
-  border: 1px solid var(--browser-border);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-xl);
   z-index: 100;
   overflow: hidden;
 }
@@ -1115,18 +1115,18 @@ function handleSearchKeydown(e: KeyboardEvent) {
   width: 100%;
   padding: 10px 14px;
   font-size: 13px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   transition: all var(--transition-fast);
 }
 
 .engine-option:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .engine-option.active {
   background: rgba(13, 148, 136, 0.1);
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .engine-check {
@@ -1145,12 +1145,12 @@ function handleSearchKeydown(e: KeyboardEvent) {
   min-height: 56px;
   max-height: 140px;
   background: transparent;
-  color: var(--browser-text);
+  color: var(--text);
   line-height: 1.6;
 }
 
 .ai-textarea::placeholder {
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
 }
 
 .ai-input-actions {
@@ -1158,7 +1158,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px 14px;
-  border-top: 1px solid var(--browser-border);
+  border-top: 1px solid var(--border);
 }
 
 .ai-actions-left,
@@ -1175,15 +1175,15 @@ function handleSearchKeydown(e: KeyboardEvent) {
   padding: 7px 11px;
   border-radius: var(--radius-sm);
   font-size: 12px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
 }
 
 .ai-tool-btn:hover {
-  background: rgba(255,255,255,0.06);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .ai-tool-btn.icon-only {
@@ -1222,8 +1222,8 @@ function handleSearchKeydown(e: KeyboardEvent) {
   gap: 10px;
   padding: 18px 20px;
   border-radius: var(--radius-lg);
-  background: var(--browser-surface);
-  border: 1px solid var(--browser-border);
+  background: var(--surface);
+  border: 1px solid var(--border);
   cursor: pointer;
   transition: all var(--transition-normal);
   min-width: 90px;
@@ -1254,19 +1254,19 @@ function handleSearchKeydown(e: KeyboardEvent) {
 
 .qa-label {
   font-size: 12px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   font-weight: 500;
   transition: color var(--transition-fast);
 }
 
 .qa-card:hover .qa-label {
-  color: var(--browser-text);
+  color: var(--text);
 }
 
 .dev-panel {
   height: 220px;
-  background: var(--browser-elevated);
-  border-top: 1px solid var(--browser-border);
+  background: var(--surface-elevated);
+  border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -1277,7 +1277,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: space-between;
   padding: 0 12px;
-  border-bottom: 1px solid var(--browser-border);
+  border-bottom: 1px solid var(--border);
   height: 38px;
   flex-shrink: 0;
 }
@@ -1294,13 +1294,13 @@ function handleSearchKeydown(e: KeyboardEvent) {
   padding: 0 14px;
   height: 38px;
   font-size: 12px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   border-bottom: 2px solid transparent;
   transition: all var(--transition-fast);
 }
 
 .dev-tab.active {
-  color: var(--browser-text);
+  color: var(--text);
   border-bottom-color: #8b5cf6;
 }
 
@@ -1311,13 +1311,13 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   transition: all var(--transition-fast);
 }
 
 .dev-close-btn:hover {
-  background: rgba(255,255,255,0.06);
-  color: var(--browser-text);
+  background: var(--surface-hover);
+  color: var(--text);
 }
 
 .dev-panel-body {
@@ -1332,15 +1332,15 @@ function handleSearchKeydown(e: KeyboardEvent) {
   flex: 1;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  background: var(--browser-input);
-  border: 1px solid var(--browser-border);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   font-size: 12px;
-  color: var(--browser-text);
+  color: var(--text);
   font-family: 'Cascadia Code', 'Fira Code', monospace;
 }
 
 .dev-script-input::placeholder {
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
 }
 
 .dev-exec-btn {
@@ -1374,7 +1374,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   font-family: 'Cascadia Code', 'Fira Code', monospace;
   font-size: 11px;
   line-height: 1.6;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   white-space: pre-wrap;
   word-break: break-all;
   margin: 0;
@@ -1386,7 +1386,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
   align-items: center;
   gap: 8px;
   padding: 24px;
-  color: var(--browser-text-dim);
+  color: var(--text-muted);
   opacity: 0.4;
   font-size: 12px;
 }
