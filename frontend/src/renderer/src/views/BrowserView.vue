@@ -278,6 +278,21 @@ async function selectTab(tabId: string) {
   }
 }
 
+ async function refreshTab() {
+  const tab = activeTab.value
+  if (!tab?.url) return
+
+  try {
+    const targetTab = tabs.value.find(t => t.id === tab.id)
+    if (targetTab) {
+      targetTab.loading = true
+    }
+    await window.api?.tab.reload()
+  } catch (e) {
+    console.error('[LuomiNest] 刷新标签页失败:', e)
+  }
+}
+
 async function navigateToUrl() {
   let url = addressBar.value.trim()
   if (!url) return
@@ -502,7 +517,7 @@ function handleSearchKeydown(e: KeyboardEvent) {
         <button class="nav-btn" aria-label="前进">
           <ArrowRight :size="16" />
         </button>
-        <button class="nav-btn" aria-label="刷新" @click="navigateToUrl">
+        <button class="nav-btn" aria-label="刷新" @click="refreshTab">
           <RotateCw :size="14" />
         </button>
       </div>

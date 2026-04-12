@@ -229,6 +229,10 @@ function registerIpcHandlers(): void {
   ipcMain.handle('tab:clearBrowserData', async () => {
     return tabManager.clearBrowserData()
   })
+
+  ipcMain.handle('tab:reload', async () => {
+    return tabManager.reloadCurrentTab()
+  })
 }
 
 app.whenReady().then(() => {

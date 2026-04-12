@@ -416,3 +416,18 @@ export async function clearBrowserData(): Promise<void> {
   await browserSession.clearStorageData()
   await browserSession.clearCache()
 }
+
+export function reloadCurrentTab(): void {
+  if (!currentView || !currentTabId) return
+
+  const tabState = tabStates.get(currentTabId)
+  if (!tabState) return
+
+  tabState.loading = true
+  currentView.webContents.reload().catch((err: Error) => {
+    if (err.message?.includes('ERR_ABORTED')) {
+      return
+    }
+    console.error('[LuomiNest] 刷新失败:', err.message)
+  })
+}

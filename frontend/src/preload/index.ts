@@ -47,7 +47,8 @@ const api = {
     getCookies: () => ipcRenderer.invoke('tab:getCookies'),
     clearBrowserData: () => ipcRenderer.invoke('tab:clearBrowserData'),
     setBoundsConfig: (config: { sidebarWidth?: number; devPanelHeight?: number }) =>
-      ipcRenderer.invoke('tab:setBoundsConfig', config)
+      ipcRenderer.invoke('tab:setBoundsConfig', config),
+    reload: () => ipcRenderer.invoke('tab:reload')
   }
 }
 

@@ -46,6 +46,7 @@ export interface ElectronApi {
     getCookies: () => Promise<Electron.Cookie[]>
     clearBrowserData: () => Promise<void>
     setBoundsConfig: (config: { sidebarWidth?: number; devPanelHeight?: number }) => Promise<void>
+    reload: () => Promise<void>
   }
 }
 
