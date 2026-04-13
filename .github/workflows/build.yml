@@ -61,7 +61,7 @@ jobs:
         with:
           name: build-${{ matrix.os }}
           path: |
-            frontend/release/**
+            release/**
           if-no-files-found: warn
 
   release:
