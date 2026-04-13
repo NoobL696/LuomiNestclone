@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import {
   Settings,
   User,
@@ -16,31 +17,37 @@ defineProps<{
   version: string
 }>()
 
+const router = useRouter()
+
 const settingGroups = ref([
   {
     title: '账户与偏好',
     items: [
-      { icon: User, label: '个人资料', desc: '管理你的账户信息' },
-      { icon: Palette, label: '外观主题', desc: '自定义界面颜色与风格' },
-      { icon: Bell, label: '通知设置', desc: '配置消息提醒方式' }
+      { icon: User, label: '个人资料', desc: '管理你的账户信息', route: '/settings/profile' },
+      { icon: Palette, label: '外观主题', desc: '自定义界面颜色与风格', route: '/settings/appearance' },
+      { icon: Bell, label: '通知设置', desc: '配置消息提醒方式', route: '/settings/notifications' }
     ]
   },
   {
     title: '系统配置',
     items: [
-      { icon: Cpu, label: 'AI 模型', desc: '选择 LLM 推理引擎' },
-      { icon: Database, label: '记忆系统', desc: '三层记忆架构配置' },
-      { icon: Shield, label: '隐私安全', desc: '数据加密与访问控制' }
+      { icon: Cpu, label: 'AI 模型', desc: '选择 LLM 推理引擎', route: '/settings/ai-model' },
+      { icon: Database, label: '记忆系统', desc: '三层记忆架构配置', route: '/settings/memory' },
+      { icon: Shield, label: '隐私安全', desc: '数据加密与访问控制', route: '/settings/privacy' }
     ]
   },
   {
     title: '连接与扩展',
     items: [
-      { icon: Globe, label: '消息平台', desc: 'QQ / 微信 / Discord 等' },
-      { icon: Settings, label: 'MCP 工具', desc: '外部工具接入协议' }
+      { icon: Globe, label: '消息平台', desc: 'QQ / 微信 / Discord 等', route: '/settings/platforms' },
+      { icon: Settings, label: 'MCP 工具', desc: '外部工具接入协议', route: '/settings/mcp' }
     ]
   }
 ])
+
+const navigateTo = (route: string) => {
+  router.push(route)
+}
 </script>
 
 <template>
@@ -68,6 +75,7 @@ const settingGroups = ref([
             v-for="item in group.items"
             :key="item.label"
             class="setting-item"
+            @click="navigateTo(item.route)"
           >
             <div class="item-icon-wrap">
               <component :is="item.icon" :size="20" />

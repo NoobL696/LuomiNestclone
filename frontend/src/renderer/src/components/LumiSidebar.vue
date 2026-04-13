@@ -22,7 +22,9 @@ import {
 const route = useRoute()
 const router = useRouter()
 
-const isBrowserMode = computed(() => route.path.startsWith('/browser'))
+const hideAgentPanelRoutes = ['/browser', '/social', '/settings']
+
+const isBrowserMode = computed(() => hideAgentPanelRoutes.some(r => route.path.startsWith(r)))
 
 const navItems = [
   { id: '/workspace', label: '对话', icon: MessageCircle },
