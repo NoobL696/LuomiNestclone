@@ -16,13 +16,14 @@ import {
   Bot,
   Palette,
   Brain,
-  Users
+  Users,
+  Store
 } from 'lucide-vue-next'
 
 const route = useRoute()
 const router = useRouter()
 
-const hideAgentPanelRoutes = ['/browser', '/social', '/settings']
+const hideAgentPanelRoutes = ['/browser', '/social', '/settings', '/skills']
 
 const isBrowserMode = computed(() => hideAgentPanelRoutes.some(r => route.path.startsWith(r)))
 
@@ -33,6 +34,7 @@ const navItems = [
   { id: '/tasks', label: '任务', icon: CheckSquare },
   { id: '/avatar', label: '皮套', icon: Palette },
   { id: '/memory', label: '记忆', icon: Brain },
+  { id: '/skills', label: '技能', icon: Store },
   { id: '/social', label: '社交', icon: Users },
   { id: '/browser', label: '浏览器', icon: Globe }
 ]

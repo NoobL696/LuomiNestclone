@@ -1,3 +1,6 @@
+from fastapi import FastAPI
+
+
 class LuomiNestError(Exception):
     def __init__(self, message: str, code: str = "UNKNOWN_ERROR", status_code: int = 500):
         self.message = message

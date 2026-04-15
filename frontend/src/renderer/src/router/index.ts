@@ -79,6 +79,12 @@ const routes: RouteRecordRaw[] = [
     meta: { title: 'AI社交 - LuomiNest', icon: 'Users' }
   },
   {
+    path: '/skills',
+    name: 'Skills',
+    component: () => import('../views/SkillMarketView.vue'),
+    meta: { title: '技能市场 - LuomiNest', icon: 'Store' }
+  },
+  {
     path: '/desktop-pet',
     name: 'DesktopPet',
     component: () => import('../views/DesktopPetView.vue'),

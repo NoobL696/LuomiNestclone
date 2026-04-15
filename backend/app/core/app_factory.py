@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 from loguru import logger
+from fastapi import FastAPI
 
 from app.core.config import settings
 from app.core.exceptions import register_exception_handlers
@@ -30,7 +31,6 @@ async def lifespan(app: FastAPI):
 
 
 def create_app() -> FastAPI:
-    from fastapi import FastAPI
     from fastapi.middleware.cors import CORSMiddleware
 
     app = FastAPI(

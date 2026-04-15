@@ -67,4 +67,88 @@ export interface Bookmark {
   url: string
 }
 
+export type SkillSource = 'git' | 'github' | 'gitee' | 'gitlab' | 'local' | 'marketplace'
+
+export type SkillStatus = 'available' | 'installed' | 'updating' | 'installing' | 'error'
+
+export type SkillCategory =
+  | 'conversation'
+  | 'productivity'
+  | 'creative'
+  | 'automation'
+  | 'iot'
+  | 'social'
+  | 'knowledge'
+  | 'voice'
+  | 'vision'
+  | 'other'
+
+export interface SkillAuthor {
+  name: string
+  avatar?: string
+  url?: string
+}
+
+export interface SkillVersion {
+  version: string
+  changelog: string
+  releasedAt: number
+  minAppVersion?: string
+}
+
+export interface SkillResource {
+  type: SkillSource
+  url: string
+  branch?: string
+  tag?: string
+}
+
+export interface SkillManifest {
+  id: string
+  name: string
+  description: string
+  longDescription?: string
+  version: string
+  category: SkillCategory
+  tags: string[]
+  author: SkillAuthor
+  icon?: string
+  coverImage?: string
+  homepage?: string
+  repository?: string
+  license?: string
+  minAppVersion?: string
+  dependencies?: string[]
+  resources: SkillResource[]
+  versions?: SkillVersion[]
+  rating?: number
+  downloads?: number
+  installedAt?: number
+  status: SkillStatus
+}
+
+export interface SkillInstallConfig {
+  source: SkillSource
+  url: string
+  branch?: string
+  tag?: string
+  targetPath?: string
+  overwrite?: boolean
+}
+
+export interface SkillUploadConfig {
+  filePath: string
+  name: string
+  overwrite?: boolean
+}
+
+export interface SkillSearchQuery {
+  keyword: string
+  category?: SkillCategory
+  source?: SkillSource
+  status?: SkillStatus
+  sortBy?: 'name' | 'rating' | 'downloads' | 'updatedAt'
+  sortOrder?: 'asc' | 'desc'
+}
+
 export {}

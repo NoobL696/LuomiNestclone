@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Any
-from dataclasses import dataclass
+from typing import Any, Optional
+from dataclasses import dataclass, field
 
 
 @dataclass
@@ -18,7 +18,7 @@ class PlatformResponse:
     content: str
     message_type: str = "text"
     reply_to: str = ""
-    extra: dict[str, Any] = None
+    extra: Optional[dict[str, Any]] = None
 
 
 class BasePlatformAdapter(ABC):

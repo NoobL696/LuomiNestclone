@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     DATA_DIR: str = "./data"
     UPLOAD_DIR: str = "./data/uploads"
     AVATAR_DIR: str = "./data/avatars"
-    PLUGIN_DIR: string = "./plugins"
+    PLUGIN_DIR: str = "./plugins"
     SKILL_DIR: str = "./skills"
 
     class Config:
